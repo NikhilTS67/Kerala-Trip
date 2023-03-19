@@ -1,0 +1,9 @@
+body {
+        background-image:url("image/back.png");
+        background-color:aqua;
+        background-attachment:fixed;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        color:black;
+}
+head

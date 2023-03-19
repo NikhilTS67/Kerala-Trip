@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+<head>
+    {% block title %}
+    <title>Create Account</title>
+    {% endblock %}
+    {% block body %}
+    <style>
+        form{
+        text-align:center;
+        color:white
+        }
+    </style>
+</head>
+
+<body>
+<br><br><br>
+<h1 style="color:blue; text-align:center;"><b>Create Account</b></h1>
+<form action="register" method="post"; >
+    {% csrf_token %}
+    <input type="text" name="Username" placeholder="Enter User Name" value="" required><br><br>
+    <input type="text" name="firstname" placeholder="Enter First Name" value="" required><br><br>
+    <input type="text" name="lastname" placeholder="Enter Last Name" value="" required><br><br>
+<!--    <input type="text" name="phonnum" placeholder="Enter Phone number" value="" required><br><br>-->
+    <input type="email" name="email" placeholder="Enter Email Adress" value="" required><br><br>
+<!--    <div class="gender">Select the Gender</div>-->
+<!--    <input type="radio" name="gender">Male-->
+<!--    <input type="radio" name="gender">Femail-->
+<!--    <input type="radio" name="gender">Other<br><br>-->
+    <input type="password" name="password" placeholder="Enter Password" value="" required><br><br>
+    <input type="password" name="cpassword" placeholder="Confirm Password" value="" required><br><br>
+    <input type="checkbox" name="confirm" value="" required>Iam confirming that above datas are correct according to my knowledge<br><br>
+    <input type="submit" name="submit" value="Register">
+</form>
+<br><br>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+{% endblock %}

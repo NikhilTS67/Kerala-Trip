@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>{{details.name}}</title>
+    {% endblock %}
+</head>
+{% block body %}
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 style="color:white">{{details.name}}</h1>
+            <img src="{{details.img.url}}" width="300" height="300">
+        </div>
+
+            <div class="col-md-6" style="color:white">
+                {{details.desc}}<br>
+                {% if user.is_authenticated %}
+                <a href="{% url 'TripApp:edit' details.id %}" class="btn btn-secondary" style="text-align:right">Edit</a>
+                <a href="{% url 'TripApp:delete' details.id %}" class="btn btn-secondary" style="text-align:left">Delete</a>
+                {% endif %}
+            </div>
+
+
+    </div>
+</div>
+</body>
+
+{% endblock %}

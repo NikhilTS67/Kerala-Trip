@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Add</title>
+    {% endblock %}
+</head>
+{% block body %}
+<body style="text-align:center">
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h1 style="text-align:center">Fill the new details</h1>
+  <label>Place</label>
+  <input type="text" name="name" placeholder="Enter the place name" required><br>
+  <label>About</label>
+  <input type="text" name="desc" placeholder="Describe about the place" required><br>
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <label>Picture</label>
+  <input type="File" name="img" required><br>
+  <input type="submit">
+</form>
+
+</body>
+{% endblock %}
